@@ -1,12 +1,15 @@
-* {
-    padding: 0;
-    margin: 0;
-    border: none;
-}
+@import url("./mac.css");
+@import url("./art-css/art.css");
+
+
 
 button {
     border-radius: 10px;
     padding: 10px;
     border: none;
+}
+
+p {    
+    font-size: 1.5rem;
 }
 
