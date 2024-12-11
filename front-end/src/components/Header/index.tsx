@@ -1,10 +1,13 @@
-import Image from "next/image";
+import "@/styles/globals.css";
+import style from "./header.module.css";
 
-import logo from "@/assets/images/logo-mac.svg"
+import Image from "next/image";
+import logo from "@/assets/images/logo-mac.svg";
+
 
 export function Header() {
     return (
-        <header>
+        <header className={ `${style.header} mac-bg-yellow-01` }>
             <Image src={logo} alt="logo-mac" />
         </header>
     )
