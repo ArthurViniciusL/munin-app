@@ -10,7 +10,7 @@ export default function Home() {
         Selecione a sua imagem da <span>Arte de fio a pavio</span>.
       </p>
       <Button className="art-bg-white-02 art-bg-black-01:hover art-ft-white-01:hover">
-        Teste 1
+        Teste button
       </Button>
       <input type="file" accept="image/png, image/jpeg" />
 
