@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
-import "@/styles/globals.css"
+import "@/styles/globals.css";
 
 import "@/styles/art-css/art.css";
 import Home from "./home/page";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 /* const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body>
         <Header/>
         <Home/>
+        <Footer/>
       </body>
     </html>
   );
