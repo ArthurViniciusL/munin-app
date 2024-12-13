@@ -1,14 +1,14 @@
 .footer {
-   /*  width: 100vw;
-    padding: 15px; */
-    padding: 1.5rem;
-    height: 3.2rem;
+    width: 100vw;
+    padding: 1.2rem;
 
+    position: fixed;
+    bottom: 0;
+    
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: space-around;
-
-    padding-bottom: 3rem;
 }
 
 .title {
@@ -18,9 +18,14 @@
 
 .content {
     width: 100%;
-    max-width: 25rem;
+    max-width: 14rem;
     display: flex;
     gap: 10px;
     flex-direction: column;
 }
 
+@media (max-width: 400px) {
+    .content {
+       text-align: center;
+    }
+}
