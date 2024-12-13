@@ -1,3 +1,4 @@
 export {
-    ImageUp as IconImageUp
-} from "lucide-react"
+    ImageUp as IconImageUp,
+    ExternalLink as IconExternalLink
+} from "lucide-react";

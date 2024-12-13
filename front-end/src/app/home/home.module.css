@@ -11,6 +11,7 @@
     overflow: auto;
     /* align-items: center; */
     justify-content: center;
+    align-items: center;
 }
 
 .content {
@@ -21,6 +22,7 @@
 
     /* height: 60%; */
     
+    text-align: center;
     
     display: flex;
     gap: 60px;
