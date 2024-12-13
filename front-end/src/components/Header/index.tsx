@@ -8,7 +8,7 @@ import logo from "@/assets/images/logo-mac.svg";
 export function Header() {
     return (
         <header className={ `${style.header} mac-bg-yellow-01` }>
-            <Image src={logo} alt="logo-mac" />
+            <Image src={logo} alt="logo-mac" priority={true} />
         </header>
     )
 }
