@@ -11,6 +11,17 @@ button {
     /* background-color: transparent; */
 }
 
+html {
+    scrollbar-width: none;
+} 
+
+@media (min-width: 1000px) {
+    html {
+        scrollbar-width: thin;
+        overflow-x: hidden;
+    }
+}
+
 p {    
     font-size: 1.5rem;
 }
@@ -18,5 +29,9 @@ p {
 a {
     color: var(--black-01);
     text-decoration: underline;
+}
+
+li,ol {
+    list-style: none;
 }
 

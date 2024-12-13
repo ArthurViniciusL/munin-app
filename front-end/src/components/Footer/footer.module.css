@@ -1,9 +1,9 @@
 .footer {
-    width: 100vw;
+    /* width: 100dvw; */
     padding: 1.2rem;
 
-    position: fixed;
-    bottom: 0;
+   /*  position: fixed;
+    bottom: 0; */
     
     display: flex;
     flex-wrap: wrap;
