@@ -1,8 +1,6 @@
 import { InputPicture } from "@/components/InputPicture";
 import styles from "./home.module.css";
 
-import { Button } from "@/components/Button";
-
 export default function Home() {
   return (
     <div className={styles.box}>
