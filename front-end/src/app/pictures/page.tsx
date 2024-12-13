@@ -4,7 +4,7 @@ import styles from "./pictures.module.css";
 import { IconImageDown } from "@/modules/app.modules";
 import { useState } from "react";
 import Image from "next/image";
-import test from "@/assets/images/1733577396352.png"
+import test from "../../../public/test/1733577396352.png"
 
 export default function Pictures() {
 
