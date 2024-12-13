@@ -30,9 +30,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className="art-bg-white-01">
       <body>
-        <Header/>
-        <Home/>
-        <Footer/>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
