@@ -1,8 +1,6 @@
 @import url("./mac.css");
 @import url("./art-css/art.css");
 
-
-
 button {
     border-radius: 10px;
     padding: 10px;
@@ -12,14 +10,14 @@ button {
 }
 
 html {
+    width: 100dvw;
+    height: 100dvh;
     scrollbar-width: none;
-} 
+}
 
-@media (min-width: 1000px) {
-    html {
-        scrollbar-width: thin;
-        overflow-x: hidden;
-    }
+body {
+    width: 100%;
+    height: 100%;
 }
 
 p {    
