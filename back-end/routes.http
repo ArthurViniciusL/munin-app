@@ -1,0 +1,27 @@
+POST http://localhost:3333/pictures?search="teste 1"
+Content-Type: application/json
+
+{
+    "title": "teste 1",
+    "about": "teste de post",
+    "infos": "000000212"
+}
+
+###
+
+GET http://localhost:3333/pictures
+
+###
+
+PUT http://localhost:3333/pictures/3ea166bf-e019-46d5-b045-a3d86e6049e6
+Content-Type: application/json
+
+{
+    "title": "teste edit",
+    "about": "teste de post",
+    "infos": "000000212"
+}
+
+###
+
+DELETE  http://localhost:3333/pictures/3ea166bf-e019-46d5-b045-a3d86e6049e6
