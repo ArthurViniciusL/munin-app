@@ -1,4 +1,4 @@
-POST http://localhost:3333/pictures?search="teste 1"
+POST http://localhost:3333/pictures
 Content-Type: application/json
 
 {
@@ -13,7 +13,7 @@ GET http://localhost:3333/pictures
 
 ###
 
-PUT http://localhost:3333/pictures/3ea166bf-e019-46d5-b045-a3d86e6049e6
+PUT http://localhost:3333/pictures/0c7a3c32-7f91-4943-a008-8f1204f0ff3e
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 
 ###
 
-DELETE  http://localhost:3333/pictures/3ea166bf-e019-46d5-b045-a3d86e6049e6
+DELETE  http://localhost:3333/pictures/0c7a3c32-7f91-4943-a008-8f1204f0ff3e
