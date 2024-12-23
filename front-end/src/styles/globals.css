@@ -1,5 +1,11 @@
-@import url("./mac.css");
 @import url("./art-css/art.css");
+@import url("./mac.css");
+
+/* * {
+    margin: 0;
+    padding: 0;
+    border: none;
+} */
 
 button {
     border-radius: 10px;
@@ -7,12 +13,17 @@ button {
     border: none;
     cursor: pointer;
     /* background-color: transparent; */
+    
 }
 
 html {
     width: 100dvw;
     height: 100dvh;
     scrollbar-width: none;
+    /*
+    min-height: 100vh;
+    cursor: url('../assets/cursor_test.png'), auto;
+    */
 }
 
 body {
@@ -32,4 +43,6 @@ a {
 li,ol {
     list-style: none;
 }
+
+
 

@@ -3,10 +3,10 @@ import styles from "./footer.module.css";
 export function Footer() {
     return (
 
-        <footer className={` ${styles.footer} art-bg-white-02`}>
+        <footer className={` ${styles.footer} bg:art-white-02`}>
 
             <div className={styles.content}>
-                <p className={`${styles.title} art-ft-black-01`}>
+                <p className={`${styles.title} ft:color:art-black-01`}>
                     Desenvolvido por:
                 </p>
                 <a href="https://arthur-vsl.vercel.app/" target="_blank" className={styles.link}>
@@ -15,7 +15,7 @@ export function Footer() {
             </div>
 
             <div className={styles.content}>
-                <p className={`${styles.title} art-ft-black-01`}>
+                <p className={`${styles.title} ft:color:art-black-01`}>
                     Mantido por:
                 </p>
                 <a href="https://museumaccg.org.br/" target="_blank" className={styles.link} >

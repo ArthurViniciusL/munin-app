@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 
 import "@/styles/globals.css";
-
 import "@/styles/art-css/art.css";
-import Home from "./home/page";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -28,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className="art-bg-white-01">
+    <html lang="pt-br" className="bg:art-white-01">
       <body>
         <Header />
         {children}
