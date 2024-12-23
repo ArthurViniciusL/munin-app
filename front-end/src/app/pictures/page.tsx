@@ -78,7 +78,7 @@ export default function Pictures() {
               fakePictures.map((picture, index) => (
                 <li key={index} className={`
                     ${styles.card}
-                    border:solid-0.5:full:art-white-03
+                    border-full:solid-0.5:art-white-03
                     hover:bg:art-white-03`
                 }>
                   <a className={styles.link} href="../../../test/1733577396352.png" download={picture.imgName} >

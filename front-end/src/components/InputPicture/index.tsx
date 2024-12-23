@@ -6,7 +6,7 @@ import { IconImageUp } from "@/modules/app.modules";
 export function InputPicture() {
     return (
         <Button className="
-            border:solid-0.5:full:art-black-01
+            border-full:solid-0.5:art-black-01
             bg:art-white-01 
             ft:color:art-black-01
             hover:bg:art-black-01
