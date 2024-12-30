@@ -1,83 +1,71 @@
-// import db
-import { DataBaseMemory } from "../db-memory/db-memory.js";
-import { getPictures } from "../services/schemas.js";
+import { getPictures, setPicture } from "../services/schemas.js";
 
+// import { DataBaseMemory } from "../db-memory/db-memory.js";
 // const db = new DataBaseMemory();
 
 export async function routes(server, options) {
-
     server.get("/pictures", async (request, reply) => {
         try {
             const db = server.mongo.db;
-            const pictures = await getPictures(db)
-
+            const pictures = await getPictures(db);
+            // return pictures
             reply.send({
+                message: "Connection successful!",
                 data: pictures
+
             })
-        } catch (err) {
+        } catch (error) {
             reply.status(500).send({
-                error: 'no connection!'
+                error: 'Error establishing connection :(',
+                details: error.message
             })
         }
-
-
-        return pictures;
     });
 
     server.post("/pictures", async (request, reply) => {
-        const {
-            picture,
-            url,
-            timestamp
-        } = request.body
+        const body = request.body;
+        try {
+            const db = request.server.mongo.db;
+            const result = await setPicture(db, body);
+
+            reply.status(201).send({
+                message: 'Image sent successfully!',
+                insertId: result.insertId
+            })
+        } catch (error) {
+            reply.status(500).send({
+                error: 'Error sending image',
+                details: error.message
+            })
+        }
+    });
+
+    /*
+        server.put("/pictures/:id", (request, reply) => {
     
-        db.create(
-            {
+            const id = request.params.id;
+            const {
                 picture,
                 url,
                 timestamp
-            }
-        )
-        console.log(db.list());
-        return reply.status(201).send();
-
-        /*
-
-        try {
-            const db = server.mongo.db;
-            const collection = db.collection('test');
-            const result = await collection.insertOne(req.body); // Insere o objeto enviado no corpo da requisição
-            reply.send({ message: 'Objeto inserido com sucesso!', result });
-        } catch (err) {
-            reply.status(500).send({ error: 'Erro ao inserir o objeto' });
-        }
-            */
-    });
-
-    server.put("/pictures/:id", (request, reply) => {
-
-        const id = request.params.id;
-        const {
-            picture,
-            url,
-            timestamp
-        } = request.body
-
-
-        db.update(id, {
-            picture: picture,
-            url: url,
-            timestamp: timestamp
+            } = request.body
+    
+    
+            db.update(id, {
+                picture: picture,
+                url: url,
+                timestamp: timestamp
+            });
+    
+            return reply.status(204).send()
         });
-
-        return reply.status(204).send()
-    });
-
-    server.delete("/pictures/:id", (request, reply) => {
-
-        const id = request.params.id;
-        db.delete(id)
-
-        return reply.status(200).send()
-    });
+    
+        server.delete("/pictures/:id", (request, reply) => {
+    
+            const id = request.params.id;
+            db.delete(id)
+    
+            return reply.status(200).send()
+        });
+    */
 };

@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-// import:
+// imports:
 import { fastify } from "fastify";
 import { routes } from "./routes/routes.js";
 import { fastifyCors } from "@fastify/cors";
@@ -17,8 +17,8 @@ server.register(mongodb, {
 });
 
 // rotas:
-server.register(routes);
 server.register(fastifyCors, { origin: '*' });
+server.register(routes);
 
 // start server:
 server.listen({
