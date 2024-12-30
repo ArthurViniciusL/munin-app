@@ -1,17 +1,26 @@
-// criar o server.js
-// add "type": "module", no packge.json
+import 'dotenv/config';
 
 // import:
 import { fastify } from "fastify";
 import { routes } from "./routes/routes.js";
+import { fastifyCors } from "@fastify/cors";
+import mongodb from "@fastify/mongodb";
 
-// criando o "server"
+
+// create "server":
 const server = fastify();
+
+// mongodb:
+server.register(mongodb, {
+    forceClose: true,
+    url: process.env.MONGO_URL
+});
 
 // rotas:
 server.register(routes);
+server.register(fastifyCors, { origin: '*' });
 
-// porta do servidor
+// start server:
 server.listen({
     port: 3333,
 }, (err, address) => {

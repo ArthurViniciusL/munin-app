@@ -2,9 +2,9 @@ POST http://localhost:3333/pictures
 Content-Type: application/json
 
 {
-    "title": "teste 1",
-    "about": "teste de post",
-    "infos": "000000212"
+    "picture": "teste 1",
+    "url": "teste de post",
+    "timestamp": "000000212"
 }
 
 ###
@@ -13,7 +13,7 @@ GET http://localhost:3333/pictures
 
 ###
 
-PUT http://localhost:3333/pictures/0c7a3c32-7f91-4943-a008-8f1204f0ff3e
+PUT http://localhost:3333/pictures/1debe2b0-1e4f-4c1b-b110-f2560cb4fbc5
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 
 ###
 
-DELETE  http://localhost:3333/pictures/0c7a3c32-7f91-4943-a008-8f1204f0ff3e
+DELETE  http://localhost:3333/pictures/ede38db5-53ca-4b8c-b328-31e1b2bed801

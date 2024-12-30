@@ -1,66 +1,83 @@
 // import db
 import { DataBaseMemory } from "../db-memory/db-memory.js";
+import { getPictures } from "../services/schemas.js";
 
-const db = new DataBaseMemory();
+// const db = new DataBaseMemory();
 
 export async function routes(server, options) {
 
-    server.get("/pictures", (request) => {
-        /** query params node js:
-         *  const search = request.query.search;
-         *  console.log(search)
-         *  const pictures = db.list(search);
-        **/
+    server.get("/pictures", async (request, reply) => {
+        try {
+            const db = server.mongo.db;
+            const pictures = await getPictures(db)
 
-        const pictures = db.list();
+            reply.send({
+                data: pictures
+            })
+        } catch (err) {
+            reply.status(500).send({
+                error: 'no connection!'
+            })
+        }
 
 
         return pictures;
     });
 
-    server.post("/pictures", (request, reply) => {
-
+    server.post("/pictures", async (request, reply) => {
         const {
-            title,
-            about,
-            infos
+            picture,
+            url,
+            timestamp
         } = request.body
     
         db.create(
             {
-                title: title,
-                about: about,
-                infos: infos
+                picture,
+                url,
+                timestamp
             }
         )
         console.log(db.list());
         return reply.status(201).send();
+
+        /*
+
+        try {
+            const db = server.mongo.db;
+            const collection = db.collection('test');
+            const result = await collection.insertOne(req.body); // Insere o objeto enviado no corpo da requisição
+            reply.send({ message: 'Objeto inserido com sucesso!', result });
+        } catch (err) {
+            reply.status(500).send({ error: 'Erro ao inserir o objeto' });
+        }
+            */
     });
 
     server.put("/pictures/:id", (request, reply) => {
 
         const id = request.params.id;
         const {
-            title,
-            about,
-            infos
+            picture,
+            url,
+            timestamp
         } = request.body
-    
-    
+
+
         db.update(id, {
-            title: title,
-            about: about,
-            infos: infos
+            picture: picture,
+            url: url,
+            timestamp: timestamp
         });
-    
+
         return reply.status(204).send()
     });
-    
+
     server.delete("/pictures/:id", (request, reply) => {
-    
+
         const id = request.params.id;
         db.delete(id)
-    
-        return reply.status(204).send()
+
+        return reply.status(200).send()
     });
 };
