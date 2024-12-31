@@ -65,10 +65,10 @@ export default function Pictures() {
   ]
 
   return (
-    <div className={styles.box}>
-      <section className={styles.content}>
+    <main className={styles.box}>
+      <div className={styles.content}>
 
-        <main className={styles.main}>
+        <section className={styles.section}>
           <h1>
             Lista de imagens:
           </h1>
@@ -78,8 +78,11 @@ export default function Pictures() {
               fakePictures.map((picture, index) => (
                 <li key={index} className={`
                     ${styles.card}
-                    border-full:solid-0.5:art-white-03
-                    hover:bg:art-white-03`
+                    art:border-style:solid
+                    art:border-size:s-01
+                    art:border-color:white-03
+
+                    art:hover:bg:white-03`
                 }>
                   <a className={styles.link} href="../../../test/1733577396352.png" download={picture.imgName} >
 
@@ -93,20 +96,20 @@ export default function Pictures() {
                         }} src={test} alt="test" />
 
                         <div className={styles.data}>
-                          <p className={`${styles.name} ft:color:art-black-01`}>{picture.imgName}</p>
-                          <p className={`${styles.infos} ft:color:art-black-02`}>Infos: {picture.data} - {picture.time}</p>
+                          <p className={`${styles.name} art:font-color:black-01`}>{picture.imgName}</p>
+                          <p className={`${styles.infos} art:font-color:black-02`}>Infos: {picture.data} - {picture.time}</p>
                         </div>
                       </div>
 
-                      <IconImageDown className="ft:color:art-black-01" />
+                      <IconImageDown className="art:font-color:black-01" />
                     </div>
                   </a>
                 </li>
               ))
             }
           </ul>
-        </main>
-      </section>
-    </div>
+        </section>
+      </div>
+    </main>
   );
 }

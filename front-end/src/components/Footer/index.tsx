@@ -3,7 +3,7 @@ import styles from "./footer.module.css";
 export function Footer() {
     return (
 
-        <footer className={` ${styles.footer} bg:art-white-02`}>
+        <footer className={` ${styles.footer} art:bg:white-02`}>
 
             <div className={styles.content}>
                 <p className={`${styles.title} ft:color:art-black-01`}>

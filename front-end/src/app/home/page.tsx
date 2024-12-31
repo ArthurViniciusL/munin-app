@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className={styles.box}>
       <section className={styles.content}>
-        <p className="ft:color:art-black-01">
+        <p className="">
           Selecione a sua imagem gerada na <span className={styles.msg}>Arte de fio a pavio</span>.
         </p>        
         <InputPicture/>

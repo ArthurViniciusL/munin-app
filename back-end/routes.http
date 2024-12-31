@@ -2,9 +2,9 @@ POST http://localhost:3333/pictures
 Content-Type: application/json
 
 {
-    "picture": "teste 1",
-    "url": "teste de post",
-    "timestamp": "000000212"
+    "name": "1733577396352.png",
+    "data": "30 dez - 19:13",
+    "timestamp": "0000000000000000"
 }
 
 ###

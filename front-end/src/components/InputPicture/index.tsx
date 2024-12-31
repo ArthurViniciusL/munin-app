@@ -6,11 +6,15 @@ import { IconImageUp } from "@/modules/app.modules";
 export function InputPicture() {
     return (
         <Button className="
-            border-full:solid-0.5:art-black-01
-            bg:art-white-01 
-            ft:color:art-black-01
-            hover:bg:art-black-01
-            hover:ft:color:art-white-01">
+            art:border-style:solid
+            art:border-color:black-01
+            art:border-size:s-01
+            art:bg:white-01 
+            art:font-color:black-01
+            
+            art:hover:bg:black-01
+            art:hover:font-color:white-01
+            ">
             <label className={`${styles.label} `} id="picture">
                 Selecionar imagem
                 <IconImageUp />
