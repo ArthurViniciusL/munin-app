@@ -78,9 +78,9 @@ export default function Pictures() {
               fakePictures.map((picture, index) => (
                 <li key={index} className={`
                     ${styles.card}
-                    art:border-style:solid
-                    art:border-size:s-01
-                    art:border-color:white-03
+                    art:border:solid
+                    art:border:s-01
+                    art:border:white-03
 
                     art:hover:bg:white-03`
                 }>
@@ -96,12 +96,12 @@ export default function Pictures() {
                         }} src={test} alt="test" />
 
                         <div className={styles.data}>
-                          <p className={`${styles.name} art:font-color:black-01`}>{picture.imgName}</p>
-                          <p className={`${styles.infos} art:font-color:black-02`}>Infos: {picture.data} - {picture.time}</p>
+                          <p className={`${styles.name} art:ft:black-01`}>{picture.imgName}</p>
+                          <p className={`${styles.infos} art:ft:black-02`}>Infos: {picture.data} - {picture.time}</p>
                         </div>
                       </div>
 
-                      <IconImageDown className="art:font-color:black-01" />
+                      <IconImageDown className="art:ft:black-01" />
                     </div>
                   </a>
                 </li>
