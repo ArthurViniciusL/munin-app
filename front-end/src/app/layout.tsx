@@ -30,7 +30,9 @@ export default function RootLayout({
     <html lang="pt-br" className="art:bg:white-01 art:ft:black-01">
       <body>
         <Header />
-        {children}
+        <main>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
