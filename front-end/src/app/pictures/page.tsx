@@ -8,12 +8,14 @@ import { useEffect, useState } from "react";
 
 interface Picture {
   name: string;
+  url: string;
   data: string;
 }
 
 export default function Pictures() {
 
   const [dataState, setDataState] = useState([]);
+  
 
   useEffect(() => {
     async function fetchData() {
@@ -51,7 +53,7 @@ export default function Pictures() {
 
                   art:hover:bg:white-03`
               }>
-                <a className={styles.link} href="../../../test/1733577396352.png" download={picture.name} >
+                <a className={styles.link} href={picture.url} download={picture.name}>
                   <div className={styles.cardContent}>
                     <div className={styles.infosBox}>
                       <Image style={{
