@@ -1,15 +1,16 @@
-POST http://localhost:3333/pictures
+POST http://localhost:3333/upload
 Content-Type: application/json
 
 {
-    "name": "1733577396352.png",
-    "data": "30 dez - 19:13",
+    "name": "1734572396852.png",
+    "url": "https://github.com/ArthurViniciusL/mac-share-image/blob/develop/front-end/public/test/1733577396352.png?raw=true",
+    "data": "16 dez - 11:16",
     "timestamp": "0000000000000000"
 }
 
 ###
 
-GET http://localhost:3333/pictures
+GET http://localhost:3333/download
 
 ###
 

@@ -2,13 +2,18 @@ import 'dotenv/config';
 
 // imports:
 import { fastify } from "fastify";
-import { routes } from "./routes/routes.js";
 import { fastifyCors } from "@fastify/cors";
+import { fastifyMultipart } from "@fastify/multipart"
 import mongodb from "@fastify/mongodb";
 
+import multer from 'fastify-multer';
+import multerConfig from './config/multer.js';
+
+import { routes } from "./routes/routes.js";
 
 // create "server":
-const server = fastify();
+// const server = fastify();
+const server = fastify({ logger: false });
 
 // mongodb:
 server.register(mongodb, {
@@ -16,8 +21,9 @@ server.register(mongodb, {
     url: process.env.MONGO_URL
 });
 
-// rotas:
+// registers:
 server.register(fastifyCors, { origin: '*' });
+server.register(fastifyMultipart);
 server.register(routes);
 
 // start server:
@@ -30,4 +36,3 @@ server.listen({
     }
     console.log(`Server running!`); //on: ${address}
 });
-

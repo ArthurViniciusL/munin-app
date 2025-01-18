@@ -9,8 +9,19 @@ export async function getPictures(db) {
 
 export async function setPicture(db, picture) {
     try {
+       
+        const { name, file } = picture;
+
         const collection = db.collection('pictures');
-        return await collection.insertOne(picture);
+
+        const result = await db.collection('pictures').insertOne({
+            name,
+            file
+        });
+
+        console.log(result);
+        return result;
+
     } catch (error) {
         throw new Error(error.message);
     }
