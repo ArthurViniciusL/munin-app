@@ -6,13 +6,8 @@ import { fastifyCors } from "@fastify/cors";
 import { fastifyMultipart } from "@fastify/multipart"
 import mongodb from "@fastify/mongodb";
 
-import multer from 'fastify-multer';
-import multerConfig from './config/multer.js';
-
 import { routes } from "./routes/routes.js";
 
-// create "server":
-// const server = fastify();
 const server = fastify({ logger: false });
 
 // mongodb:

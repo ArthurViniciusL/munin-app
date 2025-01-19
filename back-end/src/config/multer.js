@@ -11,14 +11,16 @@ const storage = multer.diskStorage({
     filename: (req, file, callback) => {
         crypto.randomBytes(16, (err, hash) => {
             if (err) return callback(err);
-            const fileName = `${hash.toString('hex')}-${file.originalname}`;
+            // const originalName = (file.filename);
+            const extension = (file.mimetype).replace('image/','');
+            const fileName = `${hash.toString('hex')}.${extension}`;
             callback(null, fileName);
         });
     }
 });
 
 const limits = {
-    fileSize: 10 * 1024 * 1024, // 10MB
+    fileSize: 8 * 1024 * 1024, // 8MB
 };
 
 const uploadMiddleware = multer({

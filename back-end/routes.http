@@ -3,14 +3,12 @@ Content-Type: application/json
 
 {
     "name": "1734572396852.png",
-    "url": "https://github.com/ArthurViniciusL/mac-share-image/blob/develop/front-end/public/test/1733577396352.png?raw=true",
-    "data": "16 dez - 11:16",
-    "timestamp": "0000000000000000"
+    "path": "CLICK: arquivo.png"
 }
 
 ###
 
-GET http://localhost:3333/download
+GET http://localhost:3333/pictures
 
 ###
 

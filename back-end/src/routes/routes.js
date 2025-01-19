@@ -6,7 +6,8 @@ import { getPictures, setPicture } from "../services/schemas.js";
 import uploadMiddleware from "../config/multer.js";
 
 export async function routes(server, options) {
-    server.get("/download", async (request, reply) => {
+    
+    server.get("/pictures", async (request, reply) => {
         try {
             const db = server.mongo.db;
             const pictures = await getPictures(db);
@@ -24,27 +25,7 @@ export async function routes(server, options) {
         }
     });
 
-
-    /* server.post("/upload", {
-        preHandler: uploadMiddleware.single('file'),
-    },
-        async (request, reply) => {
-            const body = request.body;
-            try {
-                const db = request.server.mongo.db;
-                const result = await setPicture(db, body);
-
-                reply.status(201).send({
-                    message: 'Image sent successfully!',
-                    insertId: result.insertId
-                })
-            } catch (error) {
-                reply.status(500).send({
-                    error: 'Error sending image',
-                    details: error.message
-                })
-            }
-        }); */
+    // server.get("/download:pictures?") ... abrir para acessar uploads
 
     server.post("/upload", {
         preHandler: uploadMiddleware.single('file'),
@@ -62,7 +43,7 @@ export async function routes(server, options) {
 
             const result = await setPicture(db, {
                 name: file.filename,
-                file: file.path,
+                path: file.path,
             });
 
             reply.status(201).send({
@@ -75,10 +56,9 @@ export async function routes(server, options) {
                 details: error.message
             });
         }
-        
-        console.log('Request body:', request.body);
-        console.log('Request file:', request.file);
-       
+
+        // post logs:
+        // console.log('Request body:', request.body, '\nRequest file:', request.file);
     });
 
     /*
