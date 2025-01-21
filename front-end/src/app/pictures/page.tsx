@@ -3,19 +3,25 @@
 import styles from "./pictures.module.css";
 import { IconImageDown } from "@/modules/app.modules";
 import Image from "next/image";
-import test from "../../../public/test/1733577396352.png"
+import imgTest from "../../../public/test/1733577396352.png"
 import { useEffect, useState } from "react";
 
 interface Picture {
   name: string;
-  url: string;
+  path: string;
   data: string;
 }
 
 export default function Pictures() {
 
   const [dataState, setDataState] = useState([]);
-  
+
+  // const [imgTest] = useState('/public/test/1733577396352.png');
+
+  /* */
+
+  console.log(dataState)
+
 
   useEffect(() => {
     async function fetchData() {
@@ -42,35 +48,27 @@ export default function Pictures() {
           Lista de imagens:
         </h1>
 
-        <ul className={styles.ulCard}>
+        <ul className={styles.box}>
           {
             dataState.map((picture: Picture, index) => (
               <li key={index} className={`
-                  ${styles.card}
-                  art:border:solid
-                  art:border:s-01
-                  art:border:white-03
-
-                  art:hover:bg:white-03`
-              }>
-                <a className={styles.link} href={picture.url} download={picture.name}>
-                  <div className={styles.cardContent}>
-                    <div className={styles.infosBox}>
-                      <Image style={{
-                        "width": "80px",
-                        "height": "80px",
-                        "objectFit": "cover",
-                        "borderRadius": "0.5rem"
-                      }} src={test} alt="test" />
-
-                      <div className={styles.data}>
-                        <p className={`${styles.name} art:ft:black-01`}>{picture.name}</p>
-                        <p className={`${styles.infos} art:ft:black-02`}>Infos: {picture.data}</p>
-                      </div>
+                ${styles.card}
+                art:border:solid
+                art:border:s-01
+                art:bg:white-01
+                art:border:white-03
+                art:border:r-02
+                art:hover:bg:white-03
+              `}>
+                <a className={`${styles.cardContent}`} href={picture.path} download={picture.name}>
+                  <div className={`${styles.cardItems}`}>
+                    <Image className={`${styles.image}`} src={picture.path} alt={picture.name} priority={true} width={60} height={60} />
+                    <div className={styles.data}>
+                      <p className={`${styles.name} art:ft:black-01`}>{picture.name}</p>
+                      <p className={`${styles.infos} art:ft:black-02`}>Infos: {picture.data}</p>
                     </div>
-
-                    <IconImageDown className="art:ft:black-01" />
                   </div>
+                  <IconImageDown className="art:ft:black-01" size={30} />
                 </a>
               </li>
             ))
@@ -82,7 +80,7 @@ export default function Pictures() {
     return (
       <section className={styles.content}>
 
-        <p className="art:ft:normal-02 art:ft:black-03">Nenhuma imagem recebida.</p>
+        <p className="art:font:normal-02 art:font:black-03">Nenhuma imagem recebida.</p>
 
         {/*         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse quidem nihil, obcaecati iusto iure nemo quae expedita, blanditiis qui at perspiciatis recusandae earum sit officiis enim commodi dicta! Velit.
