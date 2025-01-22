@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <section className={styles.content}>
         <p className="">
-          Selecione a sua imagem gerada na <span className="art:ft:yellow-02 art:ft:bold-03">Arte de fio a pavio</span>.
+          Selecione a sua imagem gerada na <span className="art:font:yellow-02 art:font:bold-03">Arte de fio a pavio</span>.
         </p>
         <InputPicture />
       </section>

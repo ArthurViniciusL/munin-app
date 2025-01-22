@@ -3,7 +3,6 @@
 import styles from "./pictures.module.css";
 import { IconImageDown } from "@/modules/app.modules";
 import Image from "next/image";
-import imgTest from "../../../public/test/1733577396352.png"
 import { useEffect, useState } from "react";
 
 interface Picture {
@@ -39,7 +38,7 @@ export default function Pictures() {
       }
     }
     fetchData();
-  }, []);
+  });
 
   if (dataState.length > 0) {
     return (
@@ -79,73 +78,16 @@ export default function Pictures() {
   } else {
     return (
       <section className={styles.content}>
+        <div style={{
+          width: '100%',
+          minHeight: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <p className="art:font:normal-02 art:font:black-03">Nenhuma imagem recebida.</p>
+        </div>
 
-        <p className="art:font:normal-02 art:font:black-03">Nenhuma imagem recebida.</p>
-
-        {/*         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse quidem nihil, obcaecati iusto iure nemo quae expedita, blanditiis qui at perspiciatis recusandae earum sit officiis enim commodi dicta! Velit.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati eligendi minima molestiae suscipit facere praesentium nostrum ipsam eveniet quis. Accusamus rem voluptas asperiores explicabo facere quidem labore numquam aspernatur distinctio?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab officia sapiente placeat, sequi magnam quos rerum excepturi nesciunt explicabo. Ratione nulla optio incidunt perspiciatis doloremque accusamus repellendus modi omnis delectus.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, suscipit ad voluptatum quod mollitia dolorum! Asperiores harum eligendi delectus. Sint illo et quaerat esse provident obcaecati sequi nihil asperiores est?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vitae assumenda minima voluptates eum autem. Earum sed et, molestias reprehenderit, repellat accusamus recusandae consequatur quam provident repellendus praesentium totam expedita.
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis facere rem corrupti repellat illo? Eligendi nihil, aliquid officiis laudantium deleniti, minima ex reprehenderit iusto nemo ducimus reiciendis impedit dolores.
-          banna
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse quidem nihil, obcaecati iusto iure nemo quae expedita, blanditiis qui at perspiciatis recusandae earum sit officiis enim commodi dicta! Velit.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati eligendi minima molestiae suscipit facere praesentium nostrum ipsam eveniet quis. Accusamus rem voluptas asperiores explicabo facere quidem labore numquam aspernatur distinctio?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab officia sapiente placeat, sequi magnam quos rerum excepturi nesciunt explicabo. Ratione nulla optio incidunt perspiciatis doloremque accusamus repellendus modi omnis delectus.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, suscipit ad voluptatum quod mollitia dolorum! Asperiores harum eligendi delectus. Sint illo et quaerat esse provident obcaecati sequi nihil asperiores est?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vitae assumenda minima voluptates eum autem. Earum sed et, molestias reprehenderit, repellat accusamus recusandae consequatur quam provident repellendus praesentium totam expedita.
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis facere rem corrupti repellat illo? Eligendi nihil, aliquid officiis laudantium deleniti, minima ex reprehenderit iusto nemo ducimus reiciendis impedit dolores.
-          banna
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse quidem nihil, obcaecati iusto iure nemo quae expedita, blanditiis qui at perspiciatis recusandae earum sit officiis enim commodi dicta! Velit.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati eligendi minima molestiae suscipit facere praesentium nostrum ipsam eveniet quis. Accusamus rem voluptas asperiores explicabo facere quidem labore numquam aspernatur distinctio?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab officia sapiente placeat, sequi magnam quos rerum excepturi nesciunt explicabo. Ratione nulla optio incidunt perspiciatis doloremque accusamus repellendus modi omnis delectus.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, suscipit ad voluptatum quod mollitia dolorum! Asperiores harum eligendi delectus. Sint illo et quaerat esse provident obcaecati sequi nihil asperiores est?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vitae assumenda minima voluptates eum autem. Earum sed et, molestias reprehenderit, repellat accusamus recusandae consequatur quam provident repellendus praesentium totam expedita.
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis facere rem corrupti repellat illo? Eligendi nihil, aliquid officiis laudantium deleniti, minima ex reprehenderit iusto nemo ducimus reiciendis impedit dolores.
-          banna
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse quidem nihil, obcaecati iusto iure nemo quae expedita, blanditiis qui at perspiciatis recusandae earum sit officiis enim commodi dicta! Velit.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati eligendi minima molestiae suscipit facere praesentium nostrum ipsam eveniet quis. Accusamus rem voluptas asperiores explicabo facere quidem labore numquam aspernatur distinctio?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab officia sapiente placeat, sequi magnam quos rerum excepturi nesciunt explicabo. Ratione nulla optio incidunt perspiciatis doloremque accusamus repellendus modi omnis delectus.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, suscipit ad voluptatum quod mollitia dolorum! Asperiores harum eligendi delectus. Sint illo et quaerat esse provident obcaecati sequi nihil asperiores est?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vitae assumenda minima voluptates eum autem. Earum sed et, molestias reprehenderit, repellat accusamus recusandae consequatur quam provident repellendus praesentium totam expedita.
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis facere rem corrupti repellat illo? Eligendi nihil, aliquid officiis laudantium deleniti, minima ex reprehenderit iusto nemo ducimus reiciendis impedit dolores.
-          banna
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse quidem nihil, obcaecati iusto iure nemo quae expedita, blanditiis qui at perspiciatis recusandae earum sit officiis enim commodi dicta! Velit.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati eligendi minima molestiae suscipit facere praesentium nostrum ipsam eveniet quis. Accusamus rem voluptas asperiores explicabo facere quidem labore numquam aspernatur distinctio?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab officia sapiente placeat, sequi magnam quos rerum excepturi nesciunt explicabo. Ratione nulla optio incidunt perspiciatis doloremque accusamus repellendus modi omnis delectus.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, suscipit ad voluptatum quod mollitia dolorum! Asperiores harum eligendi delectus. Sint illo et quaerat esse provident obcaecati sequi nihil asperiores est?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vitae assumenda minima voluptates eum autem. Earum sed et, molestias reprehenderit, repellat accusamus recusandae consequatur quam provident repellendus praesentium totam expedita.
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis facere rem corrupti repellat illo? Eligendi nihil, aliquid officiis laudantium deleniti, minima ex reprehenderit iusto nemo ducimus reiciendis impedit dolores.
-          banna
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse quidem nihil, obcaecati iusto iure nemo quae expedita, blanditiis qui at perspiciatis recusandae earum sit officiis enim commodi dicta! Velit.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati eligendi minima molestiae suscipit facere praesentium nostrum ipsam eveniet quis. Accusamus rem voluptas asperiores explicabo facere quidem labore numquam aspernatur distinctio?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab officia sapiente placeat, sequi magnam quos rerum excepturi nesciunt explicabo. Ratione nulla optio incidunt perspiciatis doloremque accusamus repellendus modi omnis delectus.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, suscipit ad voluptatum quod mollitia dolorum! Asperiores harum eligendi delectus. Sint illo et quaerat esse provident obcaecati sequi nihil asperiores est?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vitae assumenda minima voluptates eum autem. Earum sed et, molestias reprehenderit, repellat accusamus recusandae consequatur quam provident repellendus praesentium totam expedita.
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis facere rem corrupti repellat illo? Eligendi nihil, aliquid officiis laudantium deleniti, minima ex reprehenderit iusto nemo ducimus reiciendis impedit dolores.
-          banna
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse quidem nihil, obcaecati iusto iure nemo quae expedita, blanditiis qui at perspiciatis recusandae earum sit officiis enim commodi dicta! Velit.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati eligendi minima molestiae suscipit facere praesentium nostrum ipsam eveniet quis. Accusamus rem voluptas asperiores explicabo facere quidem labore numquam aspernatur distinctio?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab officia sapiente placeat, sequi magnam quos rerum excepturi nesciunt explicabo. Ratione nulla optio incidunt perspiciatis doloremque accusamus repellendus modi omnis delectus.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, suscipit ad voluptatum quod mollitia dolorum! Asperiores harum eligendi delectus. Sint illo et quaerat esse provident obcaecati sequi nihil asperiores est?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vitae assumenda minima voluptates eum autem. Earum sed et, molestias reprehenderit, repellat accusamus recusandae consequatur quam provident repellendus praesentium totam expedita.
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis facere rem corrupti repellat illo? Eligendi nihil, aliquid officiis laudantium deleniti, minima ex reprehenderit iusto nemo ducimus reiciendis impedit dolores.
-          banna
-        </p> */}
       </section>
     );
   }

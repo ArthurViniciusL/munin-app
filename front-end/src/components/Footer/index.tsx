@@ -6,7 +6,7 @@ export function Footer() {
         <footer className={` ${styles.footer} art:bg:white-02`}>
 
             <div className={styles.content}>
-                <p className={`${styles.title} art:ft:black-01`}>
+                <p className={`${styles.title} art:font:black-01`}>
                     Desenvolvido por:
                 </p>
                 <a href="https://arthur-vsl.vercel.app/" target="_blank" className={styles.link}>
@@ -15,7 +15,7 @@ export function Footer() {
             </div>
 
             <div className={styles.content}>
-                <p className={`${styles.title} art:ft:black-01`}>
+                <p className={`${styles.title} art:font:black-01`}>
                     Mantido por:
                 </p>
                 <a href="https://museumaccg.org.br/" target="_blank" className={styles.link} >
