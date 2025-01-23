@@ -25,8 +25,6 @@ export async function routes(server, options) {
         }
     });
 
-    // server.get("/download:pictures?") ... abrir para acessar uploads
-
     server.post("/upload", {
         preHandler: uploadMiddleware.single('file'),
     }, async (request, reply) => {
@@ -44,6 +42,7 @@ export async function routes(server, options) {
             const result = await setPicture(db, {
                 name: file.filename,
                 path: file.path,
+                url: `${process.env.SERVER_UPLOAD}/${file.filename}`
             });
 
             reply.status(201).send({

@@ -13,7 +13,7 @@ export async function setPicture(db, picture) {
     try {
         // const { filename, path } = fileData;
 
-        const { name, path } = picture;
+        const { name, path, url } = picture;
 
         // const collection = db.collection('pictures');
         const date = new Date();
@@ -32,11 +32,12 @@ export async function setPicture(db, picture) {
         const result = await db.collection('pictures').insertOne({
             name,
             path,
+            url,
             data,
             timestamp
         });
 
-        await createUrl(name)
+        // await createUrl(name)
 
         // console.log(result);
         return result;
