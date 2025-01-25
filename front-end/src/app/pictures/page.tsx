@@ -45,7 +45,6 @@ export default function Pictures() {
     return (
       <section className={styles.content}>
         <div className={styles.messageBox}>
-          <Image className={styles.marjonTom} src={marjo_tom} priority={true} alt={'asset no listed images'} width={500} />
           <h1 className={`
               art:font:Caveat-Brush
               art:font:title
@@ -54,6 +53,7 @@ export default function Pictures() {
             `}>
             Nenhuma imagem recebida.
           </h1>
+          <Image className={styles.marjonTom} src={marjo_tom} priority={true} alt={'asset no listed images'} width={500} />
         </div>
 
       </section>

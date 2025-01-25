@@ -21,8 +21,12 @@ interface ImageCardProps {
 
 export function ImageCard({ pictures }: ImageCardProps) {
 
-    const { download, handleModal, setDownload } = useModal();
+    const { download, setModalState, setDownload } = useModal();
     const [picture, setPicture] = useState<Picture>();
+
+    function handleModal() {
+        setModalState(true);
+    }
 
     function handleDownload(picture: Picture) {
         setPicture(picture);
