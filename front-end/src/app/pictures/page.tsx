@@ -1,11 +1,11 @@
 "use client";
 
-import { CardDownload } from "@/components/CardDownload";
+import { ImageCard } from "@/components/ImageCard";
 import styles from "./pictures.module.css";
 
 
 import { useEffect, useState } from "react";
-
+import { DownloadImageProvider } from "@/context/DownloadImageProvider";
 
 export default function Pictures() {
 
@@ -31,14 +31,14 @@ export default function Pictures() {
 
   if (dataState.length > 0) {
     return (
-      <section className={styles.content}>
-        <h1>
-          Lista de imagens:
-        </h1>
-        
-        <CardDownload data={dataState} />
-        
-      </section>
+      <DownloadImageProvider>
+        <section className={styles.content}>
+          <h1>
+            Lista de imagens:
+          </h1>
+          <ImageCard pictures={dataState} />
+        </section>
+      </DownloadImageProvider>
     );
   } else {
     return (

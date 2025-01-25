@@ -1,5 +1,5 @@
 export {
-    ImageUp as IconImageUp,
+    CircleFadingArrowUp as IconUpload,
     ExternalLink as IconExternalLink,
-    ImageDown as IconImageDown
+    ArrowDownToLine as IconDownload
 } from "lucide-react";

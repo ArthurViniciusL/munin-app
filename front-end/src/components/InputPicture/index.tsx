@@ -1,7 +1,7 @@
 import styles from "./InputPicture.module.css";
 
 import { Button } from "../Button";
-import { IconImageUp } from "@/modules/app.modules";
+import { IconUpload } from "@/modules/app.modules";
 
 interface InputPictureProps {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -22,9 +22,9 @@ export function InputPicture({onChange}:InputPictureProps) {
             art:hover:bg:black-01
             art:hover:font:white-01
             ">
-            <label className={`${styles.label} `} id="picture">
+            <label className={`${styles.label} art:font:semibold `} id="picture">
                 Selecionar imagem
-                <IconImageUp />
+                <IconUpload />
                 <input onChange={onChange} className={styles.input} id="picture" type="file" accept="image/png, image/jpeg" />
             </label>
         </Button>
