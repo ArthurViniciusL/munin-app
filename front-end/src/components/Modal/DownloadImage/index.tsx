@@ -2,7 +2,7 @@
 import { useModal } from '@/hooks/useModal';
 import { Button } from '../../Button';
 import styles from './ModalDownload.module.css';
-import { IconDownload } from '@/modules/app.modules';
+import { IconClose, IconDownload } from '@/modules/app.modules';
 
 interface DownloadImageProps {
     children: React.ReactNode;
@@ -25,6 +25,7 @@ export function DownloadImage({ children }: DownloadImageProps) {
         <>
             {isOpen ?
                 <main className={`${styles.container} art:bg:black:20%`} >
+                    <IconClose size={20}/>
                     <div className={`${styles.content} art:bg:white-02 art:border:r-02`}>
                         <h2 className='art:font:subtitle-02 art:font:semibold'>Baixar imagem?</h2>
                         <IconDownload size={30} />

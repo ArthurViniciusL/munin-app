@@ -12,6 +12,52 @@
     margin: 2rem;
 }
 
+.messageBox {
+    width: 100%;
+    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.marjonTom {
+    animation: upAndDown 6s ease-in-out infinite, rotate 6s ease-in-out infinite;
+}
+
+.msgNoImage {
+    font-size: 4rem;
+    animation: upAndDown  8s ease-in-out infinite;
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .box {
     width: 100%;
     max-width: 40rem;
