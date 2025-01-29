@@ -15,7 +15,6 @@ export async function routes(server, options) {
             reply.send({
                 message: "Connection successful!",
                 data: pictures
-
             })
         } catch (error) {
             reply.status(500).send({

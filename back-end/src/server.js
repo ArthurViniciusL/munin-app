@@ -11,6 +11,8 @@ import path from "path";
 import mongodb from "@fastify/mongodb";
 
 import { routes } from "./routes/routes.js";
+import { deltePictures } from './services/schemas.js';
+import deleteUploads from './scripts/deleteUploads.js';
 
 const server = fastify({ logger: false });
 
@@ -41,3 +43,26 @@ server.listen({
     }
     console.log(`Server running!`); //on: ${address}
 });
+
+
+async function deleteCache() {
+    const db = server.mongo.db;
+    const date = new Date();
+    
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    
+    const clock = `${hours}:${minutes}`;
+    /* const scheduling = "13:48"; */
+    const scheduling = "14:40";
+    
+    if (clock === scheduling) {
+        await deltePictures(db);
+        await deleteUploads();
+        console.log('delte');
+    }
+    
+    //console.log(clock);
+}
+
+setInterval(deleteCache, 2000);

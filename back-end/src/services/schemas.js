@@ -47,6 +47,15 @@ export async function setPicture(db, picture) {
     }
 }
 
+export async function deltePictures(db) {
+    try {
+        const collection = db.collection('pictures');
+        return await collection.deleteMany()
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
 /*
 async function createUrl(file) {
     // const url = `${process.env.SERVER_DOWNLOAD}/tmp/uploads/${file}`
