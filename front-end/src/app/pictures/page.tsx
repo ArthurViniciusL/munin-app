@@ -49,11 +49,12 @@ export default function Pictures() {
               art:font:Caveat-Brush
               art:font:title
               art:font:yellow-01
+              mac:motion:ease-in-out-infinite:[Y:-30]
               ${styles.msgNoImage}
             `}>
             Nenhuma imagem recebida.
           </h1>
-          <Image className={styles.marjonTom} src={marjo_tom} priority={true} alt={'asset no listed images'} width={500} />
+          <Image className="mac:motion:ease-in-out-infinite:[R:-10deg]" src={marjo_tom} priority={true} alt={'asset no listed images'} width={500} />
         </div>
 
       </section>

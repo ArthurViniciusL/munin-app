@@ -1,0 +1,45 @@
+.mac\:motion\:ease-in-out-infinite\:\[Y\:-30\] {
+    /* mac:motion:ease-in-out-infinite:[Y:-30] */
+    animation: UpAandDown-30 5s ease-in-out infinite;
+}
+
+.mac\:motion\:ease-in-out-infinite\:\[R\:-10deg\] {
+    /* mac:motion:ease-in-out-infinite:[R:-10deg] */
+    animation: Rotate-10 5s ease-in-out infinite;
+}
+
+/* mac\:motion\:ease-in-out-infinite\:\[Y\:-30\,R\:-10deg\] */
+
+.mac\:motion {
+    /* mac:motion:ease-in-out-infinite:[Y:-30,R:-10deg] */
+    border:solid red;
+    animation: UpAandDown-30 5s ease-in-out infinite, Rotate-10 6s ease-in-out infinite;
+}
+
+@keyframes UpAandDown-30 {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes Rotate-10 {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
+}

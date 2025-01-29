@@ -99,7 +99,7 @@ export function DownloadImage({ children }: DownloadImageProps) {
                                     art:btn:medium
                                     art:font:semibold
 
-                                    art:no-dark:ft:black-01
+                                    art:no-dark:font:black-01
                                     art:bg:white-03
 
                                     art:hover:bg:yellow-02

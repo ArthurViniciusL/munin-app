@@ -92,11 +92,11 @@ export function ImageCard({ pictures }: ImageCardProps) {
                                 <div className={`${styles.cardItems}`}>
                                     <Image className={`${styles.image}`} src={picture.url} alt={picture.name} priority={true} width={60} height={60} />
                                     <div className={styles.data}>
-                                        <p className={`${styles.name} art:ft:black-01`}>{picture.name}</p>
-                                        <p className={`${styles.infos} art:ft:black-02`}>Infos: {picture.data}</p>
+                                        <p className={`${styles.name} art:font:black-01`}>{picture.name}</p>
+                                        <p className={`${styles.infos} art:font:black-02`}>Infos: {picture.data}</p>
                                     </div>
                                 </div>
-                                <IconDownload className="art:ft:black-01" size={22} />
+                                <IconDownload className="art:font:black-01" size={22} />
                             </a>
                         </li>
                     ))
