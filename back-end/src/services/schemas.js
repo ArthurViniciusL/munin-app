@@ -3,7 +3,8 @@ import 'dotenv/config';
 export async function getPictures(db) {
     try {
         const collection = db.collection('pictures');
-        return await collection.find().toArray();
+
+        return await collection.find().sort({_id:-1}).toArray(); // L.I.F.O
     } catch (error) {
         throw new Error(error.message);
     }

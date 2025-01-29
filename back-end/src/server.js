@@ -53,7 +53,7 @@ async function deleteCache() {
     const minutes = date.getMinutes();
     
     const clock = `${hours}:${minutes}`;
-    /* const scheduling = "13:48"; */
+    /* const scheduling = "20:0"; */
     const scheduling = "14:40";
     
     if (clock === scheduling) {
