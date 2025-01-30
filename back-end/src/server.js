@@ -4,7 +4,7 @@ import 'dotenv/config';
 import { fastify } from "fastify";
 import { fastifyCors } from "@fastify/cors";
 import { fastifyMultipart } from "@fastify/multipart";
-import { fastifyStatic } from "@fastify/static"
+import { fastifyStatic } from "@fastify/static";
 
 import path from "path";
 
@@ -12,6 +12,8 @@ import mongodb from "@fastify/mongodb";
 
 import { routes } from "./routes/routes.js";
 import deleteData from './scripts/deleteData.js';
+
+import cron from "node-cron";
 
 const server = fastify({ logger: false });
 
@@ -43,5 +45,7 @@ server.listen({
     console.log(`Server running!`); //on: ${address}
 });
 
-const _1hrs = 1 * 60 * 60 * 1000;
-setInterval(() => deleteData(server.mongo.db), _1hrs);
+/* Cron job agendado para ser executado todos os dias às 20h e 10 minutos */
+const _10min = 10;
+const _20hrs = 20;
+cron.schedule(`${_10min} ${_20hrs} * * *`, () => {deleteData(server.mongo.db)});
