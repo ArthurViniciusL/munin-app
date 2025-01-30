@@ -21,7 +21,7 @@ export default async function deleteUploads() {
                         if(error) {
                             return console.error('Error when deleting file: ', error);
                         } else {
-                            console.error('File deleted: ', filePath);
+                            console.error('🗑️ File deleted: ', filePath);
                         }
                     })
                 }
