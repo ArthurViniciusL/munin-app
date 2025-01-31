@@ -25,6 +25,11 @@
     font-size: 4rem;
 }
 
+.marjoTom {
+    width: 60%;
+    height: fit-content;
+}
+
 .box {
     width: 100%;
     max-width: 40rem;
