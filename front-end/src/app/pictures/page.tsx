@@ -46,6 +46,7 @@ export default function Pictures() {
       <section className={styles.content}>
         <div className={styles.messageBox}>
           <h1 className={`
+              art:p-02
               art:font:Caveat-Brush
               art:font:title
               art:font:yellow-01

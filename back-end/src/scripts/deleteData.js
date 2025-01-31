@@ -10,7 +10,7 @@ export default async function deleteData(db) {
     const seconds = date.getSeconds();
 
     const clock = `${hours}:${minutes}:${seconds}`;
-    const scheduling = "22:10:0";
+    const scheduling = "20:10:0";
 
     if (hours >= 20 && clock === scheduling) {
         await deltePictures(db);
