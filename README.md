@@ -1,6 +1,4 @@
 # Munin
-<<<<<<< HEAD
-=======
 
 ## Sobre o Projeto
 
@@ -62,4 +60,4 @@ ou:
 
 ## 4. Sobre o banco de dados:
 Eu utilizei mongodb dentro de uma imagem docker e você pode baixá-la através do docker hub: .
->>>>>>> develop
+
