@@ -3,6 +3,8 @@
 import { InputPicture } from "@/components/InputPicture";
 import styles from "./home.module.css";
 import { useState } from "react";
+import Image from "next/image";
+import astronaut from "@/assets/images/send_image.svg";
 
 export default function Home() {
 
@@ -46,9 +48,12 @@ export default function Home() {
       <section className={styles.content}>
         {
           uploadConfirmed ?
-            <p className="art:font:semibold">
-              Imagem enviada com sucesso!
-            </p>
+            <>
+              <Image className='mac:motion:ease-in-out-infinite:[R:-10deg]' src={astronaut} width={300} alt='astronaut send image' priority={true}/>
+              <p className="art:font:semibold">
+                Imagem enviada com sucesso!
+              </p>
+            </>
             :
             <>
               <p className="">

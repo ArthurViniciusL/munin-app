@@ -3,7 +3,8 @@ import 'dotenv/config';
 export async function getPictures(db) {
     try {
         const collection = db.collection('pictures');
-        return await collection.find().toArray();
+
+        return await collection.find().sort({_id:-1}).toArray(); // L.I.F.O
     } catch (error) {
         throw new Error(error.message);
     }
@@ -42,6 +43,15 @@ export async function setPicture(db, picture) {
         // console.log(result);
         return result;
 
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+export async function deltePictures(db) {
+    try {
+        const collection = db.collection('pictures');
+        return await collection.deleteMany()
     } catch (error) {
         throw new Error(error.message);
     }

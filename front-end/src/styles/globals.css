@@ -1,5 +1,7 @@
 @import url("./art-css/art.css");
 @import url("./mac.css");
+@import url('./motion.css');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 
 /* * {
     margin: 0;
@@ -8,12 +10,16 @@
 } */
 
 button {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
     border-radius: 10px;
     padding: 10px;
     border: none;
     cursor: pointer;
     /* background-color: transparent; */
-    
+
 }
 
 html {
@@ -40,7 +46,7 @@ main {
     justify-content: center;
 }
 
-p {    
+p {
     font-size: 1.5rem;
 }
 
@@ -49,8 +55,13 @@ a {
     text-decoration: underline;
 }
 
-li,ol {
+li,
+ol {
     list-style: none;
 }
 
-
+.art\:font\:Caveat-Brush {
+    /* art:font:Caveat-Brush */
+    font-family: "Caveat Brush", serif;
+    font-style: normal;
+}

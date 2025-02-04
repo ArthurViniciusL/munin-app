@@ -11,13 +11,13 @@ export function DownloadImageProvider({ children }: ModalProviderProps) {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [download, setDownload] = useState<boolean>(false);
 
-    function handleModal() {
-        setIsOpen(!isOpen);
+    function setModalState(state:boolean) {
+        setIsOpen(state);
     }
-
+    
     return (
         <DownloadImageContext.Provider
-            value={{ isOpen, handleModal, download, setDownload }}
+            value={{ isOpen, setModalState, download, setDownload }}
         >
             {children}
         </DownloadImageContext.Provider>
