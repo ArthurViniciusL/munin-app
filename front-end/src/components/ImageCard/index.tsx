@@ -67,8 +67,9 @@ export function ImageCard({ pictures }: ImageCardProps) {
         }
 
         // handleDownload(picture)
-
+        // console.log(picture?.url);
     }, [download])
+
 
     return (
         <DownloadImage>
