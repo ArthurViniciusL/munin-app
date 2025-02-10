@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
         hostname: '**', // Permite qualquer hostname
       },
     ],
-    domains:['localhost']
+    domains:['localhost', '127.0.0.1']
   },
 };
 

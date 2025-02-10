@@ -12,22 +12,26 @@ export default function Pictures() {
 
   const [dataState, setDataState] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const request = await fetch(process.env.NEXT_PUBLIC_PICTURES as string);
-        if (request.ok) {
-          const api = await request.json();
-          setDataState(api.data);
+  async function fetchData() {
+    try {
+      const PUBLIC_PICTURES = process.env.NEXT_PUBLIC_PICTURES as string;
+      const request = await fetch(PUBLIC_PICTURES);
+      if (request.ok) {
+        const api = await request.json();
+        setDataState(api.data);
 
-        } else {
-          throw new Error(`HTTP error! Status: ${request.status}`)
-        }
-      } catch (error) {
-        console.error(error);
+      } else {
+        throw new Error(`HTTP error! Status: ${request.status}`)
       }
+    } catch (error) {
+      console.error(error);
     }
-    fetchData();
+  }
+
+  useEffect(() => {
+    const interval = setInterval(fetchData, 1000);
+    return () => clearInterval(interval);
+    /* useMemo? */
   });
 
   if (dataState.length > 0) {
