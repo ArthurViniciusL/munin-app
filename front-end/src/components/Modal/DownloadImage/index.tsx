@@ -4,12 +4,14 @@ import { Button } from '../../Button';
 import styles from './ModalDownload.module.css';
 import { IconClose, IconImageDown } from '@/modules/app.modules';
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface DownloadImageProps {
+    image: any;
     children: React.ReactNode;
 }
 
-export function DownloadImage({ children }: DownloadImageProps) {
+export function DownloadImage({ image, children }: DownloadImageProps) {
 
     const { isOpen, setModalState, download, setDownload } = useModal();
 
@@ -23,12 +25,12 @@ export function DownloadImage({ children }: DownloadImageProps) {
 
     function handleInModal(state: boolean) {
         if (state) {
-            console.log('entrou no modal: ', 'ok')
+            //console.log('entrou no modal: ', 'ok')
             setInModal(true);
         }
 
         else {
-            console.log('saiu do modal: ', 'ok')
+            //console.log('saiu do modal: ', 'ok')
             setInModal(false);
         }
     }
@@ -49,19 +51,6 @@ export function DownloadImage({ children }: DownloadImageProps) {
                 <main onClick={handleBackground} className={`${styles.container} art:bg:black:20%`} >
 
                     <div className={`${styles.box}`}>
-                        {/* 
-                        <span className={styles.boxBtnClose} >
-                            <Button onClick={handleCancel} className={`
-                                ${styles.btnClose}
-                                art:bg:white-02
-                                art:font:red-02
-                                art:hover:bg:red-02
-                                art:hover:font:white-02
-                            `}>
-                                <IconClose size={20} />
-                            </Button>
-                        </span>
-                    */}
                         <div className={styles.btnCloseContent}>
                             <Button className={`art:bg:white-02 art:font:black-02 art:hover:bg:red-02 art:hover:font:white-01`} onClick={handleCancel}>
                                 <IconClose size={14} />
@@ -78,7 +67,15 @@ export function DownloadImage({ children }: DownloadImageProps) {
                                 `}
                         >
                             <h2 className='art:font:subtitle-02 art:font:semibold'>Baixar imagem?</h2>
-                            <IconImageDown size={30} className={`art:font:black-03 art:bg:white-03 art:p-02 art:border:r-02`} />
+                            {
+                                image === undefined ?
+
+                                    <IconImageDown size={30} className={`art:font:black-03 art:bg:white-03 art:p-02 art:border:r-02`} />
+
+                                    :
+
+                                    <Image className="art:border:r-02" src={image.url} alt={image.name} priority={true} width={60} height={60} unoptimized={true} style={{ objectFit: "cover" }} />
+                            }
                             <div className={styles.buttons}>
                                 <Button
                                     onClick={handleCancel}

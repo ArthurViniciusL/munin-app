@@ -72,7 +72,7 @@ export function ImageCard({ pictures }: ImageCardProps) {
 
 
     return (
-        <DownloadImage>
+        <DownloadImage image={picture}>
             <ul className={styles.box} onClick={handleModal}>
                 {
                     pictures.map((picture: Picture, index) => (
@@ -91,7 +91,7 @@ export function ImageCard({ pictures }: ImageCardProps) {
                                 title={picture.name}
                             >
                                 <div className={`${styles.cardItems}`}>
-                                    <Image className={`${styles.image}`} src={picture.url} alt={picture.name} priority={true} width={60} height={60} />
+                                    <Image className={`${styles.image}`} src={picture.url} alt={picture.name} priority={true} width={60} height={60} unoptimized={true} />
                                     <div className={styles.data}>
                                         <p className={`${styles.name} art:font:black-01`}>{picture.name}</p>
                                         <p className={`${styles.infos} art:font:black-02`}>Infos: {picture.data}</p>
