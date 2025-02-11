@@ -9,17 +9,18 @@ import Image from 'next/image';
 interface DownloadImageProps {
     image: any;
     children: React.ReactNode;
+    onClick: () => void;
 }
 
-export function DownloadImage({ image, children }: DownloadImageProps) {
+export function ModalDownload({ image, children, onClick }: DownloadImageProps) {
 
-    const { isOpen, setModalState, download, setDownload } = useModal();
+    // const { isOpen, setModalState, download, setDownload } = useModal();
 
     const [inModal, setInModal] = useState<boolean>(false);
 
     function handleBackground() {
         if (!inModal) {
-            setModalState(false);
+            // setModalState(false);
         }
     }
 
@@ -36,17 +37,18 @@ export function DownloadImage({ image, children }: DownloadImageProps) {
     }
 
     function handleCancel() {
-        setModalState(false);
+        // setModalState(false);
         // setDownload(false);
     }
 
     function handleConfirm() {
-        setDownload(true);
+        // setDownload(true);
         // setTimeout(setModalState(false), 1000);
     }
 
     return (
         <>
+            {/* 
             {isOpen && !download ?
                 <main onClick={handleBackground} className={`${styles.container} art:bg:black:20%`} >
 
@@ -114,8 +116,11 @@ export function DownloadImage({ image, children }: DownloadImageProps) {
                 : <></>
             }
             <>
-                {children}
+                <div onClick={onClick}>
+                    {children}
+                </div>
             </>
+            */}
         </>
     );
 }

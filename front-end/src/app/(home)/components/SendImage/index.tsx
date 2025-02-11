@@ -1,13 +1,13 @@
 import styles from "./InputPicture.module.css";
 
-import { Button } from "../Button";
+import { Button } from "../../../../components/Button";
 import { IconUpload } from "@/modules/app.modules";
 
 interface InputPictureProps {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export function InputPicture({onChange}:InputPictureProps) {
+export function SendImage({onChange}:InputPictureProps) {
 
     /* MOVER PARA O PAGE.TSX */
 

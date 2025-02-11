@@ -1,24 +1,23 @@
-"use client";
+'use client';
 
-import { InputPicture } from "@/components/InputPicture";
+import { SendImage } from "@/app/(home)/components/SendImage";
 import styles from "./home.module.css";
 import { useState } from "react";
-import Image from "next/image";
-import astronaut from "@/assets/images/send_image.svg";
-import { CircleOff } from "lucide-react";
+import { MainTitle } from "./components/MainTitle";
+import { InvalidFormat } from "./components/InvalidFormat";
+import { Confirmation } from "./components/ConfirmationFeedback";
 
 export default function Home() {
 
-  const [uploadConfirmed, setUploadConfirmed] = useState<boolean>(false);
   const [file, setFile] = useState<File | null>(null);
-
   const [acceptedFormat, setAcceptedFormat] = useState<boolean>(true);
+  //const { uploadIsConfirmed, setUploadIsConfirmed } = useUploadContext();
+  const [uploadIsConfirmed, setUploadIsConfirmed] = useState<boolean>(false);
 
   function handleUpload(event: React.ChangeEvent<HTMLInputElement>) {
     const uploadFile = event.target.files?.[0];
-    if (uploadFile != undefined) {
-    }
-    if (uploadFile) {
+
+    if (uploadFile !== undefined) {
       setFile(uploadFile);
       upload(uploadFile);
     }
@@ -35,7 +34,6 @@ export default function Home() {
     if (extension === "png" || extension === "jpeg" || extension === "jpg") {
       const formData = new FormData();
       formData.append('file', uploadFile);
-      //console.log('FormData:', formData.get('file'));
 
       try {
         const response = await fetch(process.env.NEXT_PUBLIC_UPLOAD as string, {
@@ -44,7 +42,7 @@ export default function Home() {
         });
 
         if (response.ok) {
-          setUploadConfirmed(true);
+          setUploadIsConfirmed(true);
         }
 
       } catch (error) {
@@ -59,32 +57,20 @@ export default function Home() {
     <>
       <section className={styles.content}>
         {
-          uploadConfirmed ?
+          uploadIsConfirmed ?
             <>
-              <Image className='mac:motion:ease-in-out-infinite:[R:-10deg]' src={astronaut} width={300} alt='astronaut send image' priority={true} />
-              <p className="art:font:semibold">
-                Imagem enviada com sucesso!
-              </p>
+              <Confirmation />
             </>
             :
             <>
-              {acceptedFormat ?
-                <p className="">
-                Selecione a sua imagem gerada na <span className="art:font:yellow-02 art:font:bold">Arte de fio a pavio</span>.
-              </p>
-                :
-                <div>
-                  <CircleOff className="art:font:red-01"/>
-                  <p className="
-                  art:font:black-03
-                  art:font:semibold
-                  ">
-                    Formato de arquivo inválido!
-                  </p>
-                </div>
+              {
+                acceptedFormat ?
+                  <MainTitle />
+                  :
+                  <InvalidFormat />
               }
-              
-              <InputPicture onChange={handleUpload} />
+
+              <SendImage onChange={handleUpload} />
             </>
         }
       </section>

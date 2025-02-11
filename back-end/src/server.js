@@ -16,7 +16,7 @@ import deleteData from './scripts/deleteData.js';
 
 import cron from "node-cron";
 
-const server = fastify({ logger: true });
+const server = fastify({ logger: false });
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
