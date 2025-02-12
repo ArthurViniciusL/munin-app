@@ -16,7 +16,7 @@ export function NoImagesReceived() {
                 `}>
                         Nenhuma imagem recebida.
                 </h1>
-                    <Image className={`${styles.marjoTom} mac:motion:ease-in-out-infinite:[R:-10deg]`} src={marjo_tom} priority={true} alt={'asset no listed images'} />
+                <Image className={`${styles.marjoTom} mac:motion:ease-in-out-infinite:[R:-10deg]`} src={marjo_tom} priority={true} alt={'asset no listed images'} />
             </div>
         </>
     );

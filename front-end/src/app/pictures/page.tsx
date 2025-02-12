@@ -2,8 +2,9 @@
 
 import styles from "./pictures.module.css";
 import { useCallback, useEffect, useState } from "react";
-import { CardToDownload } from "@/components/CardToDownload";
+import { PicturesForDownload } from "@/components/PicturesForDownload";
 import { NoImagesReceived } from "./components/NoImagesReceived";
+
 export default function Pictures() {
 
   const [dataState, setDataState] = useState([]);
@@ -37,7 +38,7 @@ export default function Pictures() {
               <h1>
                 Lista de imagens:
               </h1>
-              <CardToDownload pictures={dataState} />
+              <PicturesForDownload pictures={dataState} />
             </>
             :
             <NoImagesReceived />

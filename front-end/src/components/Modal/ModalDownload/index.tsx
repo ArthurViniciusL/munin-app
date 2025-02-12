@@ -1,7 +1,7 @@
 
-import { useModal } from '@/hooks/useModal';
+import { usedialog } from '@/hooks/usedialog';
 import { Button } from '../../Button';
-import styles from './ModalDownload.module.css';
+import styles from './dialogDownload.module.css';
 import { IconClose, IconImageDown } from '@/modules/app.modules';
 import { useState } from 'react';
 import Image from 'next/image';
@@ -12,107 +12,45 @@ interface DownloadImageProps {
     onClick: () => void;
 }
 
-export function ModalDownload({ image, children, onClick }: DownloadImageProps) {
+export function dialogDownload({ image, children, onClick }: DownloadImageProps) {
 
-    // const { isOpen, setModalState, download, setDownload } = useModal();
+    // const { isOpen, setdialogState, download, setDownload } = usedialog();
 
-    const [inModal, setInModal] = useState<boolean>(false);
+    const [indialog, setIndialog] = useState<boolean>(false);
 
     function handleBackground() {
-        if (!inModal) {
-            // setModalState(false);
+        if (!indialog) {
+            // setdialogState(false);
         }
     }
 
-    function handleInModal(state: boolean) {
+    function handleIndialog(state: boolean) {
         if (state) {
-            //console.log('entrou no modal: ', 'ok')
-            setInModal(true);
+            //console.log('entrou no dialog: ', 'ok')
+            setIndialog(true);
         }
 
         else {
-            //console.log('saiu do modal: ', 'ok')
-            setInModal(false);
+            //console.log('saiu do dialog: ', 'ok')
+            setIndialog(false);
         }
     }
 
     function handleCancel() {
-        // setModalState(false);
+        // setdialogState(false);
         // setDownload(false);
     }
 
     function handleConfirm() {
         // setDownload(true);
-        // setTimeout(setModalState(false), 1000);
+        // setTimeout(setdialogState(false), 1000);
     }
 
     return (
         <>
             {/* 
             {isOpen && !download ?
-                <main onClick={handleBackground} className={`${styles.container} art:bg:black:20%`} >
-
-                    <div className={`${styles.box}`}>
-                        <div className={styles.btnCloseContent}>
-                            <Button className={`art:bg:white-02 art:font:black-02 art:hover:bg:red-02 art:hover:font:white-01`} onClick={handleCancel}>
-                                <IconClose size={14} />
-                            </Button>
-                        </div>
-
-                        <div
-                            onMouseEnter={() => handleInModal(true)}
-                            onMouseLeave={() => handleInModal(false)}
-                            className={`
-                                    ${styles.modalContent}
-                                    art:bg:white-02
-                                    art:border:r-02
-                                `}
-                        >
-                            <h2 className='art:font:subtitle-02 art:font:semibold'>Baixar imagem?</h2>
-                            {
-                                image === undefined ?
-
-                                    <IconImageDown size={30} className={`art:font:black-03 art:bg:white-03 art:p-02 art:border:r-02`} />
-
-                                    :
-
-                                    <Image className="art:border:r-02" src={image.url} alt={image.name} priority={true} width={60} height={60} unoptimized={true} style={{ objectFit: "cover" }} />
-                            }
-                            <div className={styles.buttons}>
-                                <Button
-                                    onClick={handleCancel}
-                                    className='
-                                art:btn:medium
-                                art:font:semibold
-                                art:font:red-01
-                                art:bg:red:10%
-                                art:hover:bg:red-02
-                                art:hover:font:white-01
-                            '>
-                                    Cancelar
-                                </Button>
-
-                                <Button
-                                    onClick={handleConfirm}
-                                    className='
-                                    art:btn:medium
-                                    art:font:semibold
-
-                                    art:no-dark:font:black-01
-                                    art:bg:white-03
-
-                                    art:hover:bg:yellow-02
-                                    art:hover:font:white-01
-
-                                    art:hover:border:remove
-                                '>
-                                    Baixar
-                                </Button>
-                            </div>
-                        </div>
-
-                    </div>
-                </main>
+                
                 : <></>
             }
             <>

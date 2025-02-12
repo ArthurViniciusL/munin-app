@@ -2,22 +2,22 @@ import { createContext, useState } from "react";
 
 export const DownloadImageContext = createContext<any>({});
 
-interface ModalProviderProps {
+interface dialogProviderProps {
     children: React.ReactNode;
 }
 
-export function DownloadImageProvider({ children }: ModalProviderProps) {
+export function DownloadImageProvider({ children }: dialogProviderProps) {
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [download, setDownload] = useState<boolean>(false);
 
-    function setModalState(state:boolean) {
+    function setdialogState(state:boolean) {
         setIsOpen(state);
     }
     
     return (
         <DownloadImageContext.Provider
-            value={{ isOpen, setModalState, download, setDownload }}
+            value={{ isOpen, setdialogState, download, setDownload }}
         >
             {children}
         </DownloadImageContext.Provider>
