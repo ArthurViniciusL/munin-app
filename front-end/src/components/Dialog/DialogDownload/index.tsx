@@ -5,6 +5,7 @@ import { Button } from "@/components/Button";
 import { IconClose, IconImageDown } from "@/modules/app.modules";
 import Image from "next/image";
 import { getDownload } from "@/api/getDownload";
+import { ImagePreview } from "@/components/ImagePreview";
 
 interface DialogDownloadProps {
     data: any;
@@ -15,8 +16,8 @@ interface DialogDownloadProps {
 
 export function DialogDownload({ data, state, setState, children }: DialogDownloadProps) {
 
-    const pictureName = data?.name;
-    const pictureUrl = data?.url;
+    /* const pictureName = data?.name;
+    const pictureUrl = data?.url; */
     const isOpen: boolean = state;
 
     const [downloadReleased, setDownloadReleased] = useState<boolean>(false);
@@ -55,17 +56,12 @@ export function DialogDownload({ data, state, setState, children }: DialogDownlo
                                     </div>
                                     <div className={`${styles.dialogMsg}`}>
                                         <h2 className='art:font:subtitle-02 art:font:semibold mac-ft-yellow-01'>Baixar imagem?</h2>
-                                        {
-                                            data === undefined ?
-                                                <IconImageDown size={30} className={`art:font:black-03 art:bg:white-03 art:p-02 art:border:r-02`} />
-                                                :
-                                                <Image className="art:border:r-02" src={pictureUrl} alt={pictureName} priority={true} width={90} height={90} unoptimized={true} style={{ objectFit: "cover" }} />
-                                        }
+                                        <ImagePreview data={data}/>                                        
                                     </div>
                                     <div className={styles.buttons}>
                                         <Button
                                             onClick={closeDialog}
-                                            className='art:btn:medium art:font:semibold art:font:red-01 art:bg:red:10% art:hover:bg:red-02 art:hover:font:white-01 '>
+                                            className='art:btn:medium art:font:semibold art:font:red-01 art:bg:red:10% art:hover:bg:red-02 art:hover:font:white-01'>
                                             Cancelar
                                         </Button>
 

@@ -45,13 +45,6 @@
     gap: 1rem;
 }
 
-.image {
-    width: 6rem;
-    height: 6rem;
-    object-fit: cover;
-    border-radius: 1rem;
-}
-
 .data {
     display: flex;
     gap: 1rem;

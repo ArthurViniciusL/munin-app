@@ -6,6 +6,7 @@ import { IconDownload } from "@/modules/app.modules";
 import styles from "./PicturesForDownload.module.css";
 import { useState } from "react";
 import { DialogDownload } from "../Dialog/DialogDownload";
+import { ImagePreview } from "../ImagePreview";
 
 export interface Picture {
     name: string;
@@ -15,7 +16,7 @@ export interface Picture {
 }
 
 interface PicturesForDownloadProps {
-    pictures: Picture[]
+    pictures: Picture[];
 }
 
 export function PicturesForDownload({ pictures }: PicturesForDownloadProps) {
@@ -24,7 +25,7 @@ export function PicturesForDownload({ pictures }: PicturesForDownloadProps) {
     const [dialogState, setDialogState] = useState<boolean>(false);
 
     function handleDialogDownload() {
-        setDialogState(!dialogState)
+        setDialogState(!dialogState);
     }
 
     function handleDownload(picture: Picture) {
@@ -43,8 +44,8 @@ export function PicturesForDownload({ pictures }: PicturesForDownloadProps) {
                         art:border:s-01
                         art:bg:white-01
                         art:border:white-03
-                            art:border:r-02
-                            art:hover:bg:white-03
+                        art:border:r-02
+                        art:hover:bg:white-03
                         `}>
                             <a
                                 onClick={() => handleDownload(picture)}
@@ -52,7 +53,8 @@ export function PicturesForDownload({ pictures }: PicturesForDownloadProps) {
                                 title={picture.name}
                             >
                                 <div className={`${styles.cardItems}`}>
-                                    <Image className={`${styles.image}`} src={picture.url} alt={picture.name} priority={true} width={60} height={60} unoptimized={true} />
+                                    {/* <Image className={`${styles.image}`} src={picture.url} alt={picture.name} priority={true} width={60} height={60} unoptimized={true} /> */}
+                                    <ImagePreview data={picture} />
                                     <div className={styles.data}>
                                         <p className={`${styles.name} art:font:black-01`}>{picture.name}</p>
                                         <p className={`${styles.infos} art:font:black-02`}>Infos: {picture.data}</p>

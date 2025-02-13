@@ -23,11 +23,11 @@ export default function Pictures() {
     } catch (error) {
       console.error(error);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     fetchData();
-  }, [])
+  }, []); /* melhorar a reatividade da requisição. Talvez usar o react query */
 
   return (
     <>
