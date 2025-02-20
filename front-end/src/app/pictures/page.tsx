@@ -26,7 +26,7 @@ export default function Pictures() {
   }, []);
 
   useEffect(() => {
-    fetchData();
+    setTimeout(fetchData, 600)
   }, []); /* melhorar a reatividade da requisição. Talvez usar o react query */
 
   return (
