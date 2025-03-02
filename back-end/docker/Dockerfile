@@ -1,23 +1,22 @@
-# Usar a imagem do Node.js na versão 20.18-alpine
+# Estágio de produção
 FROM node:20.18-alpine
 
-# Definir o diretório de trabalho dentro do container
+# Define o diretório de trabalho
 WORKDIR /app
 
-# Copiar os arquivos necessários para instalar as dependências
+# Copia os arquivos de dependências
 COPY package*.json ./
 
-# Instalar as dependências sem pacotes de desenvolvimento
-RUN npm install --omit=dev
+# Instala as dependências de produção
+RUN npm install
 
-# Copiar todo o código do projeto para dentro do container
+COPY ./.env ./.env
+
+# Copia o restante do código-fonte
 COPY . .
 
-# Copiar o arquivo .env para garantir as variáveis de ambiente no container
-COPY .env .env
-
-# Expor a porta que a aplicação irá rodar
+# Expõe a porta que a API vai rodar
 EXPOSE 3333
 
-# Comando para rodar a aplicação no modo de produção
-CMD ["npm", "run", "start"]
+# Comando para rodar a aplicação
+CMD ["npm", "start"]

@@ -1,0 +1,29 @@
+# Dependências
+node_modules/
+package-lock.json
+.npm/
+
+# Builds do Next.js
+.next/
+out/
+
+# Logs e arquivos temporários
+*.log
+npm-debug.log
+
+# Configurações e metadados de IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# Controle de versão
+.git/
+
+# Docker
+docker/Dockerfile
+docker/.dockerignore
+
+# Arquivos específicos do projeto
+routes.http
+run.sh
+src/db-memory
