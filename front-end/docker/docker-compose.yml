@@ -1,0 +1,19 @@
+services:
+  frontend:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+      tags:
+        - munin-front:v1.0
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - munin-network
+    container_name: munin-front
+    command: ["npm", "run", "start"]
+
+networks:
+  munin-network:
+    driver: bridge

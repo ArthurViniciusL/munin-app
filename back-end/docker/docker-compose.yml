@@ -1,0 +1,47 @@
+networks:
+  munin-network:
+    driver: bridge
+
+services:
+  mongodb:
+    container_name: munin-db
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - munin-db:/data/db
+    networks:
+      - munin-network
+    #healthcheck:
+    #  test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+    #  interval: 10s
+    #  timeout: 5s
+    #  retries: 5
+
+  app:
+    container_name: munin-back
+    image: munin-back
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    restart: always
+    ports:
+      - "3333:3333"
+    env_file: ../.env
+    environment:
+      - TZ=America/Sao_Paulo
+      - MONGO_URL=mongodb://mongodb:27017/mac
+      #- MONGO_URL=${MONGO_URL}
+    networks:
+      - munin-network
+    depends_on:
+      - mongodb
+      #mongodb:
+      #  condition: service_healthy
+    volumes:
+      - ./src/tmp/uploads:/app/src/tmp/uploads
+    command: npm run start
+
+volumes:
+  munin-db:
