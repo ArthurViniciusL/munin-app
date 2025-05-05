@@ -11,14 +11,24 @@ O Munin foi construído com as seguintes tecnologias:
 
 ---
 
-## 1. Clone o repositório
+## Como rodar?
+
+### 0. Clone o repositório
 ```
 git clone https://github.com/seu-usuario/munin.git
 ```
 
-## 2. Instale as dependências:
+### 1. Através do Docker
+> A aplicação pode ser excutada através do Docker compose, mas para facilitar a excução eu recomendo que utilize o shell script `run-app.sh` com o comando:
+```
+chmod +x run-app.sh && ./run-app.sh
+```
 
-### Front-end:
+### 2. Através do npm:
+
+#### 2.2. Instale as dependências:
+
+##### Front-end:
 ```
 cd front-end
 ```
@@ -27,7 +37,11 @@ cd front-end
 npm install
 ```
 
-### Back-end:
+```
+npm run dev
+```
+
+##### Back-end:
 ```
 cd back-end
 ```
@@ -36,14 +50,6 @@ cd back-end
 npm install
 ```
 
-## 3. Execute o programa:
-
-### Front-end:
-```
-npm run dev
-```
-
-### Back-end:
 ```
 npm run dev
 ```
@@ -51,9 +57,8 @@ npm run dev
 ou:
 
 ```
-.run.sh
+./run.sh
 ```
-
 > Para quando você já tiver configurado o banco de dados.
 
 --- 
